@@ -15,4 +15,11 @@ vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<leader>c", ":bdelete!<CR>")
 
 -- Comments 
+-- in init lua for now
+
+-- Telescope
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>")
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+
 
