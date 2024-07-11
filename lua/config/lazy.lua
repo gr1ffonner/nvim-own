@@ -12,4 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load plugins
-require("lazy").setup("plugins")
+require("lazy").setup({
+   spec = {
+      -- import your plugins
+      { import = "plugins" },
+   },
+   checker = { enabled = true },
+})

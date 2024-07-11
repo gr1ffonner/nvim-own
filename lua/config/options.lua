@@ -4,7 +4,7 @@ local g = vim.g
 
 opt.number = true
 opt.relativenumber = true
-
+opt.termguicolors = true
 opt.swapfile = false
 
 opt.clipboard = "unnamedplus"

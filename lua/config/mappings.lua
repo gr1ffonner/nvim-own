@@ -1,3 +1,4 @@
+-- General
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>i", ":write<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>]", "gt")
@@ -13,9 +14,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", { desc = "Close buffer" })
-
--- Comments
--- in init lua for now
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")

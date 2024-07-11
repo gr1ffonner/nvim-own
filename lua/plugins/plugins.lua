@@ -50,10 +50,6 @@ return {
 			vim.cmd("colorscheme horizon")
 		end,
 	},
-	-- Mason
-	{
-		"williamboman/mason.nvim",
-	},
 	-- File tree
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -62,75 +58,54 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
-	-- Buffers
+	-- Autopairs
 	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
 	},
-	-- Comments
+	-- LSP
 	{
-		"numToStr/Comment.nvim",
-		opts = {
-			-- add any options here
-		},
-		-- Autopairs
-		{
-			"windwp/nvim-autopairs",
-			event = "InsertEnter",
-			config = true,
-		},
-		-- Indent
-		{
-			"nmac427/guess-indent.nvim",
-		},
-		-- LSP
-		{
-			"neovim/nvim-lspconfig",
-		},
-		{
-			"nvim-lualine/lualine.nvim",
-			dependencies = { "nvim-tree/nvim-web-devicons" },
-		},
-		{
-			"nvim-telescope/telescope.nvim",
-			tag = "0.1.8",
-			dependencies = { "nvim-lua/plenary.nvim" },
-		},
-		{ -- Autoformat
-			"stevearc/conform.nvim",
-			lazy = false,
-			keys = {
-				{
-					"<leader>f",
-					function()
-						require("conform").format({ async = true, lsp_fallback = true })
-					end,
-					mode = "",
-					desc = "[F]ormat buffer",
-				},
-			},
-			opts = {
-				notify_on_error = false,
-				format_on_save = function(bufnr)
-					-- Disable "format_on_save lsp_fallback" for languages that don't
-					-- have a well standardized coding style. You can add additional
-					-- languages here or re-enable it for the disabled ones.
-					local disable_filetypes = { c = true, cpp = true }
-					return {
-						timeout_ms = 500,
-						lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-					}
+		"neovim/nvim-lspconfig",
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{ -- Autoformat
+		"stevearc/conform.nvim",
+		lazy = false,
+		keys = {
+			{
+				"<leader>f",
+				function()
+					require("conform").format({ async = true, lsp_fallback = true })
 				end,
-				formatters_by_ft = {
-					lua = { "stylua" },
-					-- Conform can also run multiple formatters sequentially
-					-- python = { "isort", "black" },
-					--
-					-- You can use a sub-list to tell conform to run *until* a formatter
-					-- is found.
-					-- javascript = { { "prettierd", "prettier" } },
-				},
+				mode = "",
+				desc = "[F]ormat buffer",
+			},
+		},
+		opts = {
+			notify_on_error = false,
+			format_on_save = function(bufnr)
+				-- Disable "format_on_save lsp_fallback" for languages that don't
+				-- have a well standardized coding style. You can add additional
+				-- languages here or re-enable it for the disabled ones.
+				local disable_filetypes = { c = true, cpp = true }
+				return {
+					timeout_ms = 500,
+					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+				}
+			end,
+			formatters_by_ft = {
+				lua = { "stylua" },
+				-- Conform can also run multiple formatters sequentially
+				-- python = { "isort", "black" },
+				--
+				-- You can use a sub-list to tell conform to run *until* a formatter
+				-- is found.
+				-- javascript = { { "prettierd", "prettier" } },
 			},
 		},
 	},
