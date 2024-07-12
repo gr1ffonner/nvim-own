@@ -12,6 +12,8 @@ opt.clipboard = "unnamedplus"
 opt.ignorecase = true
 opt.smartcase = true
 opt.showmatch = true
+opt.shiftwidth = 4
+opt.tabstop = 4
 
 g.nobackground = 1
 
