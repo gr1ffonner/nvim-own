@@ -19,6 +19,9 @@ return {
 		event = "InsertEnter",
 		config = true,
 	},
+	{
+		"p00f/nvim-ts-rainbow",
+	},
 	{ -- Autocompletion
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
