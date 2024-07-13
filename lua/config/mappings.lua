@@ -16,7 +16,8 @@ vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" 
 vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>X", ":1,$bd! <CR>", { desc = "Close all buffers" })
-vim.keymap.set("n", "<Leader>i", ":wa<CR>", { noremap = true, silent = true, desc = "Save all buffers" })
+vim.keymap.set("n", "<Leader>I", ":wa!<CR>", { noremap = true, silent = true, desc = "Save all buffers" })
+vim.keymap.set("n", "<Leader>i", ":w<CR>", { noremap = true, silent = true, desc = "Save buffer" })
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
