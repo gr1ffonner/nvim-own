@@ -16,10 +16,8 @@ require("plugins.mason")
 require("plugins.nvim-tree")
 require("plugins.nvim-web-devicons")
 require("plugins.plugins")
+require("plugins.sessions")
 require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.trouble")
 require("plugins.whichkey")
-
--- Startuptime
-vim.g.start_time = vim.loop.hrtime()

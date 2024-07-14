@@ -4,8 +4,6 @@ return {
 	config = function()
 		vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#af87d7" }) -- Change the color code as per your preference
 
-		local end_time = vim.loop.hrtime()
-		local startup_time_ms = (end_time - vim.g.start_time) / 1e6
 		require("dashboard").setup({
 			theme = "doom",
 			config = {
@@ -45,7 +43,7 @@ return {
 						icon_hl = "DiagnosticHint",
 						desc = " Find File ",
 						desc_hl = "DiagnosticHint",
-						key = "ff",
+						key = "f",
 						key_hl = "DiagnosticHint",
 						key_format = " [%s]",
 						action = "Telescope find_files",
@@ -55,17 +53,23 @@ return {
 						icon_hl = "DiagnosticHint",
 						desc = " Find word ",
 						desc_hl = "DiagnosticHint",
-						key = "fw",
+						key = "f",
 						key_hl = "DiagnosticHint",
 						key_format = " [%s]",
 						action = "Telescope live_grep",
 					},
+					{
+						icon = "󰺅 ",
+						icon_hl = "DiagnosticHint",
+						desc = " Search session ",
+						desc_hl = "DiagnosticHint",
+						key = "s",
+						key_hl = "DiagnosticHint",
+						key_format = " [%s]",
+						action = "Autosession search",
+					},
 				},
-				footer = {
-					"",
-					"",
-					"Startuptime: " .. startup_time_ms .. " ms",
-				},
+				footer = {},
 			},
 		})
 	end,
