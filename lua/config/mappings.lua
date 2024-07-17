@@ -21,5 +21,11 @@ vim.keymap.set("n", "<Leader>i", ":w<CR>", { noremap = true, silent = true, desc
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+vim.keymap.set(
+	"n",
+	"<Leader>fa",
+	':lua require"telescope.builtin".find_files({ hidden = true })<CR>',
+	{ noremap = true, silent = true }
+)
 vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in files" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
