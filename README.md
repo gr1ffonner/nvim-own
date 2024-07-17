@@ -12,7 +12,8 @@
 ## Installation
 
 ```shell
-git clone https://github.com/gr1ffonner/nvim-own.git
+mkdir -p ~/.config/nvim/
+git clone https://github.com/gr1ffonner/nvim-own.git ~/.config/nvim/
 ```
 
 ## After installation
