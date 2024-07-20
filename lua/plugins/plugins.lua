@@ -251,7 +251,7 @@ return {
 			local servers = {
 				-- clangd = {},
 				gopls = {},
-				-- pyright = {},
+				pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
@@ -284,6 +284,8 @@ return {
 				"stylua",
 				"gopls",
 				"gofumpt",
+				"pyright",
+				"black",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

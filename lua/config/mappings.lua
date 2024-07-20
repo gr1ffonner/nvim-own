@@ -10,6 +10,12 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 
 -- Editor
 vim.keymap.set("n", "<C-c>", ":%y+<CR>", { desc = "Copy all file" })
+vim.keymap.set(
+	"n",
+	"<leader>rw",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Replace word under cursor" }
+)
 
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
