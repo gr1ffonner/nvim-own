@@ -2,7 +2,7 @@ return {
 	"nvimdev/dashboard-nvim",
 	event = "VimEnter",
 	config = function()
-		vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#af87d7" }) -- Change the color code as per your preference
+		vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#98BF83" }) -- Change the color code as per your preference
 
 		require("dashboard").setup({
 			theme = "doom",

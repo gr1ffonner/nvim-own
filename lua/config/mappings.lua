@@ -16,22 +16,23 @@ vim.keymap.set(
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ desc = "Replace word under cursor" }
 )
+vim.keymap.set("n", "<leader>cs", ":noh<CR>", { desc = "Clear search highlight" })
 
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", { desc = "Close buffer" })
-vim.keymap.set("n", "<leader>X", ":1,$bd! <CR>", { desc = "Close all buffers" })
+vim.keymap.set("n", "<leader>X", ":wa<CR>:1,$bd! <CR>", { desc = "Save all and close all buffers" })
 vim.keymap.set("n", "<Leader>I", ":wa!<CR>", { noremap = true, silent = true, desc = "Save all buffers" })
 vim.keymap.set("n", "<Leader>i", ":w<CR>", { noremap = true, silent = true, desc = "Save buffer" })
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-vim.keymap.set(
+vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>fa",
-	':lua require"telescope.builtin".find_files({ hidden = true })<CR>',
-	{ noremap = true, silent = true }
+	':lua require"telescope.builtin".find_files({ hidden = true, no_ignore = true })<CR>',
+	{ noremap = true, silent = true, desc = "Find all files" }
 )
 vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in files" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })

@@ -33,4 +33,3 @@ require("lazy").setup({
 		backdrop = 100,
 	},
 })
-
