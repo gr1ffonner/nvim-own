@@ -23,3 +23,6 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.trouble")
 require("plugins.whichkey")
+
+-- Utils
+require("utils.go_mod_rename")

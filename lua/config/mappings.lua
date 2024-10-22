@@ -37,3 +37,12 @@ vim.api.nvim_set_keymap(
 vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in files" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
 vim.keymap.set("n", "gu", "<cmd>Telescope lsp_references<cr>", { desc = "Find references" })
+
+-- Utils
+vim.keymap.set(
+	"n",
+	"<leader>rm",
+	":lua require('utils.go_mod_rename').replace_go_module()<CR>",
+	{ desc = "Rename go module name and imports" },
+	{ noremap = true, silent = true }
+)
