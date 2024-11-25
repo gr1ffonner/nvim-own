@@ -19,6 +19,8 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>cs", ":noh<CR>", { desc = "Clear search highlight" })
 
 -- Buffers
+vim.keymap.set("n", "<leader>ch", ":new<CR>", { noremap = true, silent = true, desc = "Clear / search" })
+vim.keymap.set("n", "<leader>cv", ":vnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", { desc = "Close buffer" })
@@ -28,7 +30,7 @@ vim.keymap.set("n", "<Leader>i", ":w<CR>", { noremap = true, silent = true, desc
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-vim.api.nvim_set_keymap(
+vim.keymap.set(
 	"n",
 	"<Leader>fa",
 	':lua require"telescope.builtin".find_files({ hidden = true, no_ignore = true })<CR>',
@@ -43,6 +45,5 @@ vim.keymap.set(
 	"n",
 	"<leader>rm",
 	":lua require('utils.go_mod_rename').replace_go_module()<CR>",
-	{ desc = "Rename go module name and imports" },
-	{ noremap = true, silent = true }
+	{ desc = "Rename go module name and imports", noremap = true, silent = true }
 )

@@ -24,5 +24,8 @@ require("plugins.treesitter")
 require("plugins.trouble")
 require("plugins.whichkey")
 
+-- LSP
+require("plugins.lsp")
+
 -- Utils
 require("utils.go_mod_rename")
