@@ -4,7 +4,7 @@ local keymaps = require("plugins.lsp.keymaps")
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "gopls", "pyright", "lua_ls" },
+	ensure_installed = { "gopls", "pyright" },
 })
 
 local lspconfig = require("lspconfig")
@@ -16,8 +16,9 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- Attach LSP servers with their respective configurations
 local servers = {
 	gopls = require("plugins.lsp.go"),
-	pyright = require("plugins.lsp.python"),
-	lua_ls = require("plugins.lsp.lua"),
+	-- pyright = require("plugins.lsp.python"),
+
+	-- lua_ls = require("plugins.lsp.lua"),
 }
 
 for server, config in pairs(servers) do

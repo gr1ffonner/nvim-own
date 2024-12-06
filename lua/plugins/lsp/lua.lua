@@ -6,7 +6,7 @@ return {
 			},
 			diagnostics = {
 				disable = { "missing-fields" },
-				globals = { "vim" }, -- Prevent "vim" undefined errors
+				globals = { "vim" },
 			},
 			workspace = {
 				library = vim.api.nvim_get_runtime_file("", true),
