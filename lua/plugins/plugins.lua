@@ -234,6 +234,7 @@ return {
 						},
 					},
 				},
+				black = {},
 				pyright = {},
 				lua_ls = {
 					settings = {

@@ -36,6 +36,7 @@ vim.api.nvim_set_keymap(
 )
 vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in files" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
+vim.keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find symbols" })
 vim.keymap.set("n", "gu", "<cmd>Telescope lsp_references<cr>", { desc = "Find references" })
 
 -- Utils
