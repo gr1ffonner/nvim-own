@@ -36,6 +36,9 @@ vim.keymap.set(
 	':lua require"telescope.builtin".find_files({ hidden = true, no_ignore = true })<CR>',
 	{ noremap = true, silent = true, desc = "Find all files" }
 )
+
+-- for test commit
+
 vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in files" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
 vim.keymap.set("n", "gu", "<cmd>Telescope lsp_references<cr>", { desc = "Find references" })
